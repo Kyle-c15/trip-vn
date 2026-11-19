@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="一份可直接执行的越南芽庄 5 天旅行攻略，收录 61 个高评分餐厅、咖啡厅和购物地点。"
+    />
+    <meta name="theme-color" content="#087f8c" />
+    <title>芽庄 5 天旅行手册</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="assets/lucide.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>芽庄五日</span>
+      </a>
+      <nav class="site-nav" aria-label="主要导航">
+        <a href="#itinerary">行程</a>
+        <a href="#places">地点</a>
+        <a href="#budget">预算</a>
+        <button class="nav-favorite" type="button" data-favorite-shortcut>
+          <i data-lucide="heart" aria-hidden="true"></i>
+          <span>收藏</span>
+          <span class="favorite-count" data-favorite-count>0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content page-shell">
+          <p class="hero-kicker">越南 · Khánh Hòa</p>
+          <h1 id="hero-title">芽庄 5 天旅行手册</h1>
+          <p class="hero-intro">
+            把海岛安排给风浪最小的那天，把好吃的、好逛的和雨天退路提前放进口袋。
+          </p>
+
+          <div class="hero-route" aria-label="五天行程快捷入口">
+            <button type="button" data-day-jump="0">
+              <span>Day 1</span><strong>抵达与海滨</strong>
+            </button>
+            <button type="button" data-day-jump="1">
+              <span>Day 2</span><strong>占婆塔与泥浆浴</strong>
+            </button>
+            <button type="button" data-day-jump="2">
+              <span>Day 3</span><strong>VinWonders</strong>
+            </button>
+            <button type="button" data-day-jump="3">
+              <span>Day 4</span><strong>海岛或雨天线</strong>
+            </button>
+            <button type="button" data-day-jump="4">
+              <span>Day 5</span><strong>市场与返程</strong>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-facts page-shell" aria-label="攻略概况">
+          <div><strong>61</strong><span>个地点</span></div>
+          <div><strong>4.0–5.0</strong><span>Google 评分</span></div>
+          <div><strong>4–7m</strong><span>VND 参考预算</span></div>
+          <div><strong>2026.11</strong><span>数据版本</span></div>
+        </div>
+      </section>
+
+      <aside class="weather-band" aria-label="雨季提醒">
+        <div class="page-shell weather-inner">
+          <i data-lucide="cloud-rain-wind" aria-hidden="true"></i>
+          <p>
+            <strong>11 月是雨季。</strong>
+            抵达后看未来 48 小时海况，把 Day 4 调到风浪最小的一天；海边红旗时不要下水。
+          </p>
+          <a href="#rain-plan">查看雨天方案</a>
+        </div>
+      </aside>
+
+      <section class="itinerary section-band" id="itinerary" aria-labelledby="itinerary-title">
+        <div class="page-shell">
+          <div class="section-heading">
+            <div>
+              <p class="section-index">5 天可调整路线</p>
+              <h2 id="itinerary-title">每天只解决一个主要问题</h2>
+            </div>
+            <p>
+              文化景点集中在北城，海滨餐饮集中在 Trần Phú 一带。Day 4 保持弹性，其余行程不必来回折返。
+            </p>
+          </div>
+
+          <div class="day-tabs" role="tablist" aria-label="选择行程日期" data-day-tabs></div>
+          <article class="day-panel" data-day-panel aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="places section-band" id="places" aria-labelledby="places-title">
+        <div class="page-shell">
+          <div class="section-heading places-heading">
+            <div>
+              <p class="section-index">Google Maps 地点目录</p>
+              <h2 id="places-title">吃、喝、买，按当天的位置决定</h2>
+            </div>
+            <p>
+              评分与评价数记录于 2026 年 11 月。出发前请再看营业状态，并按“最新”阅读近期低分评价。
+            </p>
+          </div>
+
+          <div class="place-toolbar" aria-label="地点筛选工具">
+            <label class="search-field">
+              <i data-lucide="search" aria-hidden="true"></i>
+              <span class="sr-only">搜索地点</span>
+              <input
+                type="search"
+                placeholder="搜索名称、地址或用途"
+                autocomplete="off"
+                data-place-search
+              />
+            </label>
+
+            <div class="filter-segments" role="group" aria-label="地点类型">
+              <button type="button" class="is-active" data-category="all">全部</button>
+              <button type="button" data-category="restaurant">餐厅</button>
+              <button type="button" data-category="cafe">咖啡</button>
+              <button type="button" data-category="shopping">购物</button>
+            </div>
+
+            <label class="sort-field">
+              <span>排序</span>
+              <select data-place-sort>
+                <option value="recommended">推荐顺序</option>
+                <option value="rating">评分最高</option>
+                <option value="reviews">评价最多</option>
+              </select>
+            </label>
+
+            <button class="favorite-filter" type="button" aria-pressed="false" data-favorite-filter>
+              <i data-lucide="heart" aria-hidden="true"></i>
+              只看收藏
+            </button>
+          </div>
+
+          <div class="result-bar">
+            <p data-result-count>显示 0 个地点</p>
+            <button class="clear-filters" type="button" data-clear-filters>清除筛选</button>
+          </div>
+
+          <div class="place-list" data-place-list></div>
+          <div class="empty-state" data-empty-state hidden>
+            <i data-lucide="map" aria-hidden="true"></i>
+            <p>没有匹配的地点。换一个关键词，或清除筛选。</p>
+          </div>
+          <button class="load-more" type="button" data-load-more hidden>显示更多地点</button>
+        </div>
+      </section>
+
+      <section class="planning section-band" id="budget" aria-labelledby="budget-title">
+        <div class="page-shell planning-layout">
+          <div class="budget-block">
+            <p class="section-index">每人参考，不含机票酒店</p>
+            <h2 id="budget-title">把钱花在海况和食材上</h2>
+            <dl class="budget-list">
+              <div><dt>日常餐饮</dt><dd>350k–800k VND / 天</dd></div>
+              <div><dt>市内交通</dt><dd>150k–350k VND / 天</dd></div>
+              <div><dt>VinWonders</dt><dd>约 1,050k VND</dd></div>
+              <div><dt>海岛一日游</dt><dd>500k–900k VND</dd></div>
+              <div><dt>泥浆浴</dt><dd>约 350k VND 起</dd></div>
+              <div class="budget-total"><dt>五天合计</dt><dd>约 4m–7m VND</dd></div>
+            </dl>
+          </div>
+
+          <div class="pitfall-block" id="rain-plan">
+            <div class="photo-slice" role="img" aria-label="芽庄婆那加占婆塔"></div>
+            <h3>雨天照样能走完的线路</h3>
+            <p>
+              Long Sơn Pagoda → 芽庄大教堂 → Xóm Mới Market → Nha He Coffee →
+              Vincom Plaza Trần Phú。减少海边岩石和摩托车移动，把泥浆浴放在下午。
+            </p>
+            <ul>
+              <li>海鲜下单前确认公斤价、加工费和总重。</li>
+              <li>市场先确认报价单位是公斤、500 克还是一份。</li>
+              <li>国际航班至少提前 3 小时到 CXR，雨天再多留 30 分钟。</li>
+              <li>寺庙准备遮肩、过膝衣物，Hòn Chồng 穿防滑鞋。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <div>
+          <strong>芽庄 5 天旅行手册</strong>
+          <p>Google 评分会变化。最后更新：2026-11-19。</p>
+        </div>
+        <p class="photo-credit">
+          照片：
+          <a href="https://commons.wikimedia.org/wiki/File:Nha_Trang_look_from_Nha_Trang_sea.jpeg">Hoàng Thạch</a>
+          · CC BY-SA 2.0（裁切）；
+          <a href="https://commons.wikimedia.org/wiki/File:Po_Nagar_Cham_Towers.jpeg">4pf3154f7</a>
+          · CC BY-SA 3.0（裁切）。
+        </p>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+  </body>
+</html>
